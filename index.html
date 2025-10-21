@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Chronicle – Monatliche Zeitschrift</title>
+  <meta name="description" content="Die monatliche Online-Zeitschrift Midnight Chronicle – unabhängige Artikel, exklusive Ausgaben, echte Meinungen." />
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+      background: #0c0c0c;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, #111, #222);
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #e3b341;
+    }
+    nav {
+      margin-top: .5rem;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .cta {
+      background: #222;
+      border: 1px solid #333;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .cta h2 {
+      color: #e3b341;
+    }
+    .button {
+      display: inline-block;
+      margin: 0.5rem;
+      background: #e3b341;
+      color: #111;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .button:hover {
+      background: #ffd95a;
+    }
+    .issues ul {
+      list-style: none;
+      padding: 0;
+    }
+    .issues li {
+      margin-bottom: 0.6rem;
+    }
+    .ad-banner {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Midnight Chronicle</h1>
+    <nav>
+      <a href="#abo">Abo</a>
+      <a href="#ausgaben">Ausgaben</a>
+      <a href="#werbung">Werbung</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>
+        Willkommen bei der <strong>Midnight Chronicle</strong> – deiner monatlichen, unabhängigen Zeitschrift für Kultur, Gesellschaft und verborgene Geschichten.
+      </p>
+    </section>
+
+    <section id="abo" class="cta">
+      <h2>Unterstütze die Midnight Chronicle</h2>
+      <p>Werde Mitglied und erhalte jeden Monat exklusiven Zugang zur neuen Ausgabe!</p>
+
+      <!-- PayPal Button -->
+      <div>
+        <h3>PayPal-Abo</h3>
+        <!-- Beispielcode: diesen Code durch deinen eigenen ersetzen -->
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+          <input type="hidden" name="business" value="DEINE_PAYPAL_MAIL@example.com" />
+          <input type="hidden" name="no_recurring" value="0" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="button" value="Jetzt abonnieren über PayPal" />
+        </form>
+      </div>
+
+      <!-- Gumroad Button -->
+      <div>
+        <h3>Gumroad-Abo</h3>
+        <!-- Beispielcode: diesen Code durch den echten Embed-Link ersetzen -->
+        <a href="https://gumroad.com/l/DEINPRODUKT" class="button" target="_blank">Abo über Gumroad abschließen</a>
+      </div>
+    </section>
+
+    <section id="ausgaben" class="issues">
+      <h2>Aktuelle Ausgaben</h2>
+      <ul>
+        <li><a href="ausgabe1.pdf" target="_blank">Oktober 2025 – Die stille Stadt</a></li>
+        <li><a href="ausgabe2.pdf" target="_blank">November 2025 – Stimmen der Nacht</a></li>
+      </ul>
+    </section>
+
+    <section id="werbung">
+      <h2>Werbung & Partnerschaften</h2>
+      <p>Interessiert an einer Anzeige in der Midnight Chronicle? Schreib uns an <a href="mailto:redaktion@midnight-chronicle.com">redaktion@midnight-chronicle.com</a>.</p>
+
+      <div class="ad-banner">
+        <a href="https://beispielwerbung.de" target="_blank">
+          <img src="banner1.jpg" alt="Anzeige" width="728" height="90" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Midnight Chronicle – Alle Rechte vorbehalten.</p>
+    <p>
+      <a href="impressum.html">Impressum</a> |
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </footer>
+</body>
+</html>
