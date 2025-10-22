@@ -1,167 +1,164 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Midnight Chronicle – Monatliche Zeitschrift</title>
-  <meta name="description" content="Die monatliche Online-Zeitschrift Midnight Chronicle – unabhängige Artikel, exklusive Ausgaben, echte Meinungen." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Midnight Chronicle</title>
+
+  <!-- Optional: Google Fonts (falls gewünscht) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: system-ui, Arial, sans-serif;
-      margin: 0;
-      background: #0c0c0c;
-      color: #f1f1f1;
-      line-height: 1.6;
+    :root{
+      --bg:#070707;
+      --muted:#bfbfbf;
+      --accent:#c5a87b;
+      --danger:#b30000;
+      --glass-bg:rgba(20,20,20,0.45);
     }
-    header {
-      background: linear-gradient(90deg, #111, #222);
-      padding: 1rem 2rem;
-      text-align: center;
+
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(40,10,40,0.22), transparent 6%),
+                 radial-gradient(800px 600px at 90% 90%, rgba(10,40,40,0.12), transparent 6%),
+                 var(--bg);
+      color:#eee;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      margin-top:120px; /* Platz für Header */
+      line-height:1.5;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #e3b341;
+
+    /* Glass header */
+    .site-banner{
+      position:fixed;
+      z-index:1000;
+      left:0; top:0;
+      width:100%;
+      padding:14px 0;
+      text-align:center;
+      background:var(--glass-bg);
+      backdrop-filter: blur(10px) saturate(120%);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      box-shadow:0 5px 18px rgba(0,0,0,0.6);
+      transition: transform 220ms ease, background 220ms ease, padding 220ms ease;
     }
-    nav {
-      margin-top: .5rem;
+
+    .site-banner.shrink{
+      padding:8px 0;
+      background: rgba(10,10,10,0.55);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.75);
     }
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 1rem;
+
+    .banner-image{
+      max-width:300px;
+      height:auto;
+      vertical-align:middle;
+      opacity:0.96;
     }
-    nav a:hover {
-      color: #fff;
+
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 22px;
+      display:flex;
+      gap:28px;
+      align-items:flex-start;
+      justify-content:center;
     }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+
+    .hero{
+      max-width:820px;
+      text-align:center;
     }
-    section {
-      margin-bottom: 3rem;
+
+    .intro-text{
+      color:var(--danger);
+      font-family: "Playfair Display", serif;
+      font-size:1.4rem;
+      margin:6px 0 18px;
+      line-height:1.6;
+      font-weight:500;
     }
-    .cta {
-      background: #222;
-      border: 1px solid #333;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
+
+    h1.site-title{
+      margin:0;
+      font-family: "Playfair Display", serif;
+      font-size:2.1rem;
+      letter-spacing:0.6px;
+      color:#fff;
+      font-weight:700;
     }
-    .cta h2 {
-      color: #e3b341;
+
+    p.lead{
+      color:var(--muted);
+      margin-top:12px;
+      font-size:1rem;
     }
-    .button {
-      display: inline-block;
-      margin: 0.5rem;
-      background: #e3b341;
-      color: #111;
-      padding: 0.7rem 1.2rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin-top:22px;
+      flex-wrap:wrap;
     }
-    .button:hover {
-      background: #ffd95a;
+
+    .btn{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      min-width:140px;
+      text-align:center;
     }
-    .issues ul {
-      list-style: none;
-      padding: 0;
+    .btn-primary{
+      background:linear-gradient(180deg,#c9b089,#b58f5a);
+      color:#0b0b0b;
+      box-shadow: 0 6px 18px rgba(197,168,123,0.12);
     }
-    .issues li {
-      margin-bottom: 0.6rem;
+    .btn-ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+      color:var(--muted);
     }
-    .ad-banner {
-      text-align: center;
-      margin: 2rem 0;
+
+    /* Support box */
+    .support {
+      width:260px;
+      min-height:160px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:10px;
+      padding:14px;
+      color:var(--muted);
+      font-size:0.95rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      align-self:flex-start;
     }
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 1rem;
-      color: #888;
-      font-size: 0.9rem;
+
+    .support h4{margin:0 0 8px 0; color:#fff; font-size:1rem;}
+    .support p{margin:0 0 12px 0; font-size:0.92rem; color:var(--muted);}
+    .support .pay-row{display:flex;gap:8px;flex-direction:column;}
+
+    footer{
+      max-width:1100px;
+      margin:40px auto 80px;
+      padding:0 22px;
+      color:var(--muted);
+      font-size:0.9rem;
     }
-    footer a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-    footer a:hover {
-      color: #fff;
+
+    /* responsive */
+    @media (max-width:880px){
+      .site-banner{padding:10px 0;}
+      .banner-image{max-width:220px;}
+      main{flex-direction:column; align-items:center;}
+      .support{width:100%;}
     }
   </style>
-</head>
-<body>
-  <header>
-    <h1>Midnight Chronicle</h1>
-    <nav>
-      <a href="#abo">Abo</a>
-      <a href="#ausgaben">Ausgaben</a>
-      <a href="#werbung">Werbung</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="intro">
-      <p>
-        Willkommen bei der <strong>Midnight Chronicle</strong> – deiner monatlichen, unabhängigen Zeitschrift für Kultur, Gesellschaft und verborgene Geschichten.
-      </p>
-    </section>
-
-    <section id="abo" class="cta">
-      <h2>Unterstütze die Midnight Chronicle</h2>
-      <p>Werde Mitglied und erhalte jeden Monat exklusiven Zugang zur neuen Ausgabe!</p>
-
-      <!-- PayPal Button -->
-      <div>
-        <h3>PayPal-Abo</h3>
-        <!-- Beispielcode: diesen Code durch deinen eigenen ersetzen -->
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-          <input type="hidden" name="business" value="DEINE_PAYPAL_MAIL@example.com" />
-          <input type="hidden" name="no_recurring" value="0" />
-          <input type="hidden" name="currency_code" value="EUR" />
-          <input type="submit" class="button" value="Jetzt abonnieren über PayPal" />
-        </form>
-      </div>
-
-      <!-- Gumroad Button -->
-      <div>
-        <h3>Gumroad-Abo</h3>
-        <!-- Beispielcode: diesen Code durch den echten Embed-Link ersetzen -->
-        <a href="https://gumroad.com/l/DEINPRODUKT" class="button" target="_blank">Abo über Gumroad abschließen</a>
-      </div>
-    </section>
-
-    <section id="ausgaben" class="issues">
-      <h2>Aktuelle Ausgaben</h2>
-      <ul>
-        <li><a href="ausgabe1.pdf" target="_blank">Oktober 2025 – Die stille Stadt</a></li>
-        <li><a href="ausgabe2.pdf" target="_blank">November 2025 – Stimmen der Nacht</a></li>
-      </ul>
-    </section>
-
-    <section id="werbung">
-      <h2>Werbung & Partnerschaften</h2>
-      <p>Interessiert an einer Anzeige in der Midnight Chronicle? Schreib uns an <a href="mailto:redaktion@midnight-chronicle.com">redaktion@midnight-chronicle.com</a>.</p>
-
-      <div class="ad-banner">
-        <a href="https://beispielwerbung.de" target="_blank">
-          <img src="banner1.jpg" alt="Anzeige" width="728" height="90" />
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Midnight Chronicle – Alle Rechte vorbehalten.</p>
-    <p>
-      <a href="impressum.html">Impressum</a> |
-      <a href="datenschutz.html">Datenschutz</a>
-    </p>
-  </footer>
-</body>
-</html>
+</
