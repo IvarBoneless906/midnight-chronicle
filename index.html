@@ -7,91 +7,130 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #0b0b0b;
-      color: #e0d6b5;
+      background-color: #0a0a0a;
+      color: #dcd5b8;
       font-family: 'Georgia', serif;
-      zoom: 0.95; /* leicht verkleinert für mobile Darstellung */
     }
+
+    /* ---------------- HEADER & SCALING ---------------- */
+    header {
+      height: 45vh;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transform: scale(1.05);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+      backdrop-filter: blur(2px);
+    }
+
+    /* ---------------- ARTICLE CARDS ---------------- */
     .article-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #111;
     }
     .article-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(255, 200, 100, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(50,255,100,0.15);
+    }
+
+    /* ---------------- LINKS & BUTTONS ---------------- */
+    a {
+      color: #00ff99;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #aaffcc;
+    }
+    .btn-green {
+      background: #00ff99;
+      color: #0a0a0a;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .btn-green:hover {
+      background: #66ffcc;
+      transform: translateY(-1px);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
+
+<body class="flex flex-col min-h-screen">
 
   <!-- HEADER -->
-  <header class="relative h-52 md:h-72 w-full overflow-hidden">
-    <div class="absolute inset-0">
-      <img src="MIDNIGHT_.png" alt="Midnight Chronicle Banner"
-           class="w-full h-full object-cover brightness-105 scale-105">
-    </div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/5 via-black/40 to-black/90 backdrop-blur-sm"></div>
-
-    <!-- Navigation -->
-    <nav class="relative z-10 flex justify-center md:justify-end items-end h-full px-6 space-x-6 text-amber-300 font-semibold text-lg pb-4">
-      <a href="index.html" class="hover:text-amber-100 transition">Home</a>
-      <a href="stories.html" class="hover:text-amber-100 transition">Stories</a>
-      <a href="impressum.html" class="hover:text-amber-100 transition">Impressum</a>
-      <a href="datenschutz.html" class="hover:text-amber-100 transition">Datenschutz</a>
+  <header>
+    <img src="MIDNIGHT_.png" alt="Midnight Chronicle Banner">
+    <nav class="absolute bottom-0 w-full flex justify-center md:justify-end space-x-5 text-green-400 font-semibold text-lg px-6 pb-4 z-10">
+      <a href="index.html" class="hover:text-green-200">Home</a>
+      <a href="stories.html" class="hover:text-green-200">Stories</a>
+      <a href="impressum.html" class="hover:text-green-200">Impressum</a>
+      <a href="datenschutz.html" class="hover:text-green-200">Datenschutz</a>
     </nav>
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="flex-grow px-4 md:px-8 py-10 space-y-10">
+  <main class="flex-grow px-5 md:px-10 py-10 space-y-10">
+
     <section class="text-center">
-      <h2 class="text-3xl font-extrabold text-amber-300 mb-4">Erstausgabe – Dunkelheit & Hoffnung</h2>
+      <h2 class="text-3xl font-extrabold text-green-400 mb-4">Erstausgabe – Dunkelheit & Hoffnung</h2>
       <p class="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Willkommen zur ersten Ausgabe des <span class="italic text-amber-200">Midnight Chronicle</span> –
+        Willkommen zur ersten Ausgabe des <span class="italic text-green-300">Midnight Chronicle</span> –
         Geschichten zwischen Dämmerung und Erwachen. Reportagen, Essays und Kunst aus der Schattenseite der Nacht.
       </p>
     </section>
 
     <!-- ARTICLE PREVIEWS -->
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Artikel 1 -->
-      <article class="article-card bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
-        <img src="article1.jpg" alt="Artikel 1" class="w-full h-40 object-cover opacity-90">
+      <article class="article-card border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <img src="article1.jpg" alt="Artikel 1" class="w-full h-44 object-cover opacity-95">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-amber-300 mb-2">Unter der Laterne</h3>
+          <h3 class="text-xl font-bold text-green-400 mb-2">Unter der Laterne</h3>
           <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
             Eine Begegnung in der regennassen Nacht – über Zufall, Schatten und Erinnerung.
           </p>
-          <a href="https://gumroad.com" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition">
-            Weiterlesen
-          </a>
+          <a href="https://gumroad.com" target="_blank" class="btn-green">Weiterlesen</a>
         </div>
       </article>
 
       <!-- Artikel 2 -->
-      <article class="article-card bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
-        <img src="article2.jpg" alt="Artikel 2" class="w-full h-40 object-cover opacity-90">
+      <article class="article-card border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <img src="article2.jpg" alt="Artikel 2" class="w-full h-44 object-cover opacity-95">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-amber-300 mb-2">Stille Maschinen</h3>
+          <h3 class="text-xl font-bold text-green-400 mb-2">Stille Maschinen</h3>
           <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
             Über die verlorene Eleganz der Mechanik und das leise Verschwinden handwerklicher Seele.
           </p>
-          <a href="https://paypal.me" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition">
-            Weiterlesen
-          </a>
+          <a href="https://paypal.me" target="_blank" class="btn-green">Weiterlesen</a>
         </div>
       </article>
 
       <!-- Artikel 3 -->
-      <article class="article-card bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
-        <img src="article3.jpg" alt="Artikel 3" class="w-full h-40 object-cover opacity-90">
+      <article class="article-card border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <img src="article3.jpg" alt="Artikel 3" class="w-full h-44 object-cover opacity-95">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-amber-300 mb-2">Echo im Glas</h3>
+          <h3 class="text-xl font-bold text-green-400 mb-2">Echo im Glas</h3>
           <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
             Die Stimmen der Nacht in einer verlassenen Halle – ein Bericht zwischen Traum und Verfall.
           </p>
-          <a href="https://gumroad.com" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition">
-            Weiterlesen
-          </a>
+          <a href="https://gumroad.com" target="_blank" class="btn-green">Weiterlesen</a>
         </div>
       </article>
 
@@ -99,20 +138,20 @@
 
     <!-- ABONNENTENBEREICH -->
     <section class="bg-neutral-900 rounded-2xl shadow-lg p-6 md:p-8 border border-neutral-800 text-center">
-      <h2 class="text-2xl font-bold text-amber-300 mb-3">Abonnentenbereich</h2>
+      <h2 class="text-2xl font-bold text-green-400 mb-3">Abonnentenbereich</h2>
       <p class="text-neutral-300 mb-3">
         Exklusive Inhalte für Unterstützer. Du kannst über die folgenden Plattformen spenden oder abonnieren:
       </p>
       <p>
-        <a href="https://paypal.me" class="text-blue-400 hover:underline">PayPal</a> |
-        <a href="https://gumroad.com" class="text-blue-400 hover:underline">Gumroad</a>
+        <a href="https://paypal.me" class="text-green-400 hover:text-green-200">PayPal</a> |
+        <a href="https://gumroad.com" class="text-green-400 hover:text-green-200">Gumroad</a>
       </p>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="text-center text-sm text-neutral-500 py-6 border-t border-neutral-800">
-    © 2025 <span class="text-amber-300">Midnight Chronicle</span> — Crafted with passion and a touch of rust.
+    © 2025 <span class="text-green-400">Midnight Chronicle</span> — Crafted with passion and a touch of rust.
   </footer>
 
 </body>
