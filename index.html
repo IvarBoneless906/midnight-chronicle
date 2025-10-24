@@ -10,24 +10,29 @@
       background-color: #0b0b0b;
       color: #e0d6b5;
       font-family: 'Georgia', serif;
+      zoom: 0.95; /* leicht verkleinert für mobile Darstellung */
+    }
+    .article-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(255, 200, 100, 0.15);
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
   <!-- HEADER -->
-  <header class="relative h-56 md:h-72 w-full overflow-hidden">
-    <!-- Banner-Bild -->
+  <header class="relative h-52 md:h-72 w-full overflow-hidden">
     <div class="absolute inset-0">
       <img src="MIDNIGHT_.png" alt="Midnight Chronicle Banner"
-           class="w-full h-full object-cover brightness-105 scale-105 blur-[1px]">
+           class="w-full h-full object-cover brightness-105 scale-105">
     </div>
-
-    <!-- Farbverlauf unten + Glas-Effekt -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90 backdrop-blur-sm"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/5 via-black/40 to-black/90 backdrop-blur-sm"></div>
 
     <!-- Navigation -->
-    <nav class="relative z-10 flex justify-center md:justify-end items-end h-full px-6 space-x-6 text-amber-300 font-semibold text-lg drop-shadow-md pb-4">
+    <nav class="relative z-10 flex justify-center md:justify-end items-end h-full px-6 space-x-6 text-amber-300 font-semibold text-lg pb-4">
       <a href="index.html" class="hover:text-amber-100 transition">Home</a>
       <a href="stories.html" class="hover:text-amber-100 transition">Stories</a>
       <a href="impressum.html" class="hover:text-amber-100 transition">Impressum</a>
@@ -36,24 +41,71 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="flex-grow px-4 md:px-8 py-10 space-y-8">
-    <section class="bg-neutral-900 rounded-2xl shadow-lg p-6 md:p-8 border border-neutral-800">
-      <h2 class="text-3xl font-extrabold text-amber-300 mb-3">Erstausgabe – Dunkelheit & Hoffnung</h2>
-      <p class="text-neutral-300 leading-relaxed">
+  <main class="flex-grow px-4 md:px-8 py-10 space-y-10">
+    <section class="text-center">
+      <h2 class="text-3xl font-extrabold text-amber-300 mb-4">Erstausgabe – Dunkelheit & Hoffnung</h2>
+      <p class="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
         Willkommen zur ersten Ausgabe des <span class="italic text-amber-200">Midnight Chronicle</span> –
-        Geschichten zwischen Dämmerung und Erwachen. Hier findest du Reportagen, Essays und Kunst aus der Schattseite der Nacht.
+        Geschichten zwischen Dämmerung und Erwachen. Reportagen, Essays und Kunst aus der Schattenseite der Nacht.
       </p>
     </section>
 
-    <section class="bg-neutral-900 rounded-2xl shadow-lg p-6 md:p-8 border border-neutral-800">
+    <!-- ARTICLE PREVIEWS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Artikel 1 -->
+      <article class="article-card bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <img src="article1.jpg" alt="Artikel 1" class="w-full h-40 object-cover opacity-90">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-300 mb-2">Unter der Laterne</h3>
+          <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
+            Eine Begegnung in der regennassen Nacht – über Zufall, Schatten und Erinnerung.
+          </p>
+          <a href="https://gumroad.com" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition">
+            Weiterlesen
+          </a>
+        </div>
+      </article>
+
+      <!-- Artikel 2 -->
+      <article class="article-card bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <img src="article2.jpg" alt="Artikel 2" class="w-full h-40 object-cover opacity-90">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-300 mb-2">Stille Maschinen</h3>
+          <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
+            Über die verlorene Eleganz der Mechanik und das leise Verschwinden handwerklicher Seele.
+          </p>
+          <a href="https://paypal.me" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition">
+            Weiterlesen
+          </a>
+        </div>
+      </article>
+
+      <!-- Artikel 3 -->
+      <article class="article-card bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <img src="article3.jpg" alt="Artikel 3" class="w-full h-40 object-cover opacity-90">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-300 mb-2">Echo im Glas</h3>
+          <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
+            Die Stimmen der Nacht in einer verlassenen Halle – ein Bericht zwischen Traum und Verfall.
+          </p>
+          <a href="https://gumroad.com" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition">
+            Weiterlesen
+          </a>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ABONNENTENBEREICH -->
+    <section class="bg-neutral-900 rounded-2xl shadow-lg p-6 md:p-8 border border-neutral-800 text-center">
       <h2 class="text-2xl font-bold text-amber-300 mb-3">Abonnentenbereich</h2>
       <p class="text-neutral-300 mb-3">
         Exklusive Inhalte für Unterstützer. Du kannst über die folgenden Plattformen spenden oder abonnieren:
       </p>
       <p>
-        <a href="#" class="text-blue-400 hover:underline">PayPal</a> |
-        <a href="#" class="text-blue-400 hover:underline">Gumroad</a> |
-        <a href="#" class="text-blue-400 hover:underline">GitHub</a>
+        <a href="https://paypal.me" class="text-blue-400 hover:underline">PayPal</a> |
+        <a href="https://gumroad.com" class="text-blue-400 hover:underline">Gumroad</a>
       </p>
     </section>
   </main>
