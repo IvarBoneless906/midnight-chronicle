@@ -4,21 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Midnight Chronicle</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: "Open Sans", sans-serif;
-      background-color: #0b0b0b;
-      color: #f2f2f2;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Georgia", serif;
     }
 
+    body {
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+    }
+
+    /* HEADER mit Banner und Glaseffekt */
     header {
       position: relative;
+      width: 100%;
       height: 260px;
-      background: url("MIDNIGHT_.png") center/cover no-repeat;
+      background: url('MIDNIGHT_.png') center/cover no-repeat;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       overflow: hidden;
     }
@@ -26,72 +32,79 @@
     header::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(4px);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 10, 10, 0.4);
+      backdrop-filter: blur(6px);
     }
 
     header h1 {
       position: relative;
+      color: gold;
+      font-size: 2.8rem;
+      text-shadow: 0 0 8px rgba(255, 180, 0, 0.4);
+      margin-bottom: 25px;
       z-index: 2;
-      font-family: "Playfair Display", serif;
-      font-size: 3rem;
-      color: #f5f5f5;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     }
 
     nav {
-      background: #111;
+      background: rgba(30, 30, 30, 0.8);
+      backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem;
-      border-bottom: 1px solid #222;
+      padding: 0.8rem 0;
     }
 
     nav a {
-      color: #f2f2f2;
+      color: #f0c878;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
     nav a:hover {
-      color: #ffce63;
+      color: #ffffff;
     }
 
     main {
-      padding: 2.5rem 10%;
-      background: #101010;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    article {
+    section.article {
       background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       padding: 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: background 0.3s ease;
+    }
+
+    section.article:hover {
+      background: rgba(255, 255, 255, 0.08);
     }
 
     h2 {
-      font-family: "Playfair Display", serif;
-      color: #ffce63;
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
+      color: #f1d27a;
+      margin-bottom: 0.8rem;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 0;
       font-size: 0.9rem;
-      background: #0a0a0a;
-      color: #aaa;
-      border-top: 1px solid #222;
+      color: #bcbcbc;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     footer a {
-      color: #ffce63;
+      color: #f0c878;
       text-decoration: none;
+      margin: 0 8px;
     }
 
     footer a:hover {
@@ -107,29 +120,28 @@
   <nav>
     <a href="#">Home</a>
     <a href="#">Stories</a>
-    <a href="#">About</a>
-    <a href="#">Support</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
   </nav>
 
   <main>
-    <article>
-      <h2>Feature Story</h2>
-      <p>A glimpse into the mysteries of the midnight world — stories of decay, hope, and forgotten light.</p>
-    </article>
+    <section class="article">
+      <h2>Erstausgabe – Dunkelheit & Hoffnung</h2>
+      <p>Willkommen zur ersten Ausgabe des Midnight Chronicle – Geschichten zwischen Dämmerung und Erwachen. 
+      Hier findest du Reportagen, Essays und Kunst aus der Schattenseite der Nacht.</p>
+    </section>
 
-    <article>
-      <h2>Editorial</h2>
-      <p>Welcome to the <strong>Midnight Chronicle</strong> — a digital magazine exploring culture, emotion, and the beauty of the unseen night.</p>
-    </article>
+    <section class="article">
+      <h2>Abonnentenbereich</h2>
+      <p>Exklusive Inhalte für Unterstützer. Du kannst über die folgenden Plattformen spenden oder abonnieren:</p>
+      <p>
+        <a href="https://paypal.me" target="_blank">PayPal</a> |
+        <a href="https://gumroad.com" target="_blank">Gumroad</a> |
+        <a href="https://github.com/IvarBoneless906" target="_blank">GitHub</a>
+      </p>
+    </section>
   </main>
 
   <footer>
-    © 2025 Midnight Chronicle — Crafted with passion and a touch of rust.<br>
-    <a href="impressum.html">Impressum</a> | 
-    <a href="datenschutz.html">Datenschutz</a> | 
-    <a href="#">PayPal</a> | 
-    <a href="#">Gumroad</a> | 
-    <a href="https://github.com/IvarBoneless">GitHub</a>
-  </footer>
-</body>
-</html>
+    © 2025 Midnight Chronicle — Crafted with passion and a touch of rust.
+  </
