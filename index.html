@@ -17,115 +17,23 @@
       color: #e0e0e0;
     }
 
-    /* HEADER mit Banner und Glaseffekt */
-    header {
-      position: relative;
-      width: 100%;
-      height: 260px;
-      background: url('MIDNIGHT_.png') center/cover no-repeat;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(10, 10, 10, 0.4);
-      backdrop-filter: blur(6px);
-    }
-
-    header h1 {
-      position: relative;
-      color: gold;
-      font-size: 2.8rem;
-      text-shadow: 0 0 8px rgba(255, 180, 0, 0.4);
-      margin-bottom: 25px;
-      z-index: 2;
-    }
-
-    nav {
-      background: rgba(30, 30, 30, 0.8);
-      backdrop-filter: blur(5px);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0.8rem 0;
-    }
-
-    nav a {
-      color: #f0c878;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section.article {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      transition: background 0.3s ease;
-    }
-
-    section.article:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    h2 {
-      color: #f1d27a;
-      margin-bottom: 0.8rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      font-size: 0.9rem;
-      color: #bcbcbc;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    footer a {
-      color: #f0c878;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-     
-<!-- HEADER -->
-<header class="relative h-48 md:h-64 w-full overflow-hidden">
+    <!-- HEADER -->
+<header class="relative h-56 md:h-72 w-full overflow-hidden">
+  <!-- Banner-Bild -->
   <div class="absolute inset-0">
     <img src="MIDNIGHT_.png" alt="Midnight Chronicle Banner" 
-         class="w-full h-full object-cover blur-sm brightness-75">
+         class="w-full h-full object-cover brightness-105 blur-[2px] scale-105">
   </div>
-  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-  <nav class="relative z-10 flex justify-center md:justify-end items-center h-full px-6 space-x-6 text-amber-400 font-semibold text-lg">
-    <a href="index.html" class="hover:text-amber-300 transition">Home</a>
-    <a href="stories.html" class="hover:text-amber-300 transition">Stories</a>
-    <a href="impressum.html" class="hover:text-amber-300 transition">Impressum</a>
-    <a href="datenschutz.html" class="hover:text-amber-300 transition">Datenschutz</a>
+
+  <!-- Glas-Effekt-Schicht -->
+  <div class="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+
+  <!-- Navigation -->
+  <nav class="relative z-10 flex justify-center md:justify-end items-center h-full px-6 space-x-6 text-amber-300 font-semibold text-lg drop-shadow-md">
+    <a href="index.html" class="hover:text-amber-200 transition">Home</a>
+    <a href="stories.html" class="hover:text-amber-200 transition">Stories</a>
+    <a href="impressum.html" class="hover:text-amber-200 transition">Impressum</a>
+    <a href="datenschutz.html" class="hover:text-amber-200 transition">Datenschutz</a>
   </nav>
 </header>
   <nav>
