@@ -1,157 +1,98 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Midnight Chronicle – Dunkelheit & Hoffnung</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Midnight Chronicle</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      background-color: #0a0a0a;
-      color: #dcd5b8;
-      font-family: 'Georgia', serif;
-    }
-
-    /* ---------------- HEADER & SCALING ---------------- */
-    header {
-      height: 45vh;
-      min-height: 260px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      transform: scale(1.05);
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
-      backdrop-filter: blur(2px);
-    }
-
-    /* ---------------- ARTICLE CARDS ---------------- */
-    .article-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: #111;
-    }
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(50,255,100,0.15);
-    }
-
-    /* ---------------- LINKS & BUTTONS ---------------- */
-    a {
-      color: #00ff99;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #aaffcc;
-    }
-    .btn-green {
-      background: #00ff99;
-      color: #0a0a0a;
-      font-weight: 600;
-      border-radius: 0.5rem;
-      padding: 0.5rem 1.2rem;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-    .btn-green:hover {
-      background: #66ffcc;
-      transform: translateY(-1px);
-    }
+    body{background:#070707;color:#dcd5b8;font-family:Georgia,serif}
+    header{height:45vh;min-height:260px;position:relative;overflow:hidden}
+    header img{width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.03)}
+    header::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.08),rgba(0,0,0,0.9));backdrop-filter:blur(3px)}
+    nav{position:absolute;bottom:0;right:0;padding:1rem 1.5rem;z-index:10}
+    nav a{color:#00ff99;margin-left:1rem;font-weight:600;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:2rem}
+    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1.25rem}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:rgba(18,18,18,0.9);border:1px solid rgba(0,255,153,0.06);border-radius:12px;overflow:hidden;transition:transform .18s,box-shadow .18s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,255,153,0.07)}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card .body{padding:1rem}
+    .title{color:#00ff99;font-weight:700;margin:0 0 .5rem 0}
+    .teaser{color:#cfc9ab;font-size:0.95rem;margin-bottom:.75rem}
+    .btn{background:linear-gradient(90deg,#00cc66,#00ff99);color:#07120a;padding:.5rem .9rem;border-radius:.6rem;font-weight:700;text-decoration:none}
+    footer{padding:2rem 0;text-align:center;color:#9aa08a;border-top:1px solid rgba(255,255,255,0.03)}
   </style>
 </head>
-
-<body class="flex flex-col min-h-screen">
+<body>
 
   <!-- HEADER -->
   <header>
-    <img src="MIDNIGHT_.png" alt="Midnight Chronicle Banner">
-    <nav class="absolute bottom-0 w-full flex justify-center md:justify-end space-x-5 text-green-400 font-semibold text-lg px-6 pb-4 z-10">
-      <a href="index.html" class="hover:text-green-200">Home</a>
-      <a href="stories.html" class="hover:text-green-200">Stories</a>
-      <a href="impressum.html" class="hover:text-green-200">Impressum</a>
-      <a href="datenschutz.html" class="hover:text-green-200">Datenschutz</a>
+    <img src="assets/banner.png" alt="Midnight Chronicle Banner">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="stories.html">Stories</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="flex-grow px-5 md:px-10 py-10 space-y-10">
-
-    <section class="text-center">
-      <h2 class="text-3xl font-extrabold text-green-400 mb-4">Erstausgabe – Dunkelheit & Hoffnung</h2>
-      <p class="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Willkommen zur ersten Ausgabe des <span class="italic text-green-300">Midnight Chronicle</span> –
-        Geschichten zwischen Dämmerung und Erwachen. Reportagen, Essays und Kunst aus der Schattenseite der Nacht.
-      </p>
+  <!-- MAIN -->
+  <main class="container">
+    <section style="text-align:center;margin-bottom:1.25rem">
+      <h1 style="color:#00ff99;font-size:2rem;margin:0 0 .5rem">Midnight Chronicle</h1>
+      <p style="color:#cfc9ab;max-width:800px;margin:0 auto">Monatliche Reportagen, Essays und Erzählen aus der Dämmerung. Vollversionen nur für Unterstützer (0,50 €).</p>
     </section>
 
-    <!-- ARTICLE PREVIEWS -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- PREVIEWS GRID -->
+    <section class="grid">
 
-      <!-- Artikel 1 -->
-      <article class="article-card border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
-        <img src="article1.jpg" alt="Artikel 1" class="w-full h-44 object-cover opacity-95">
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-green-400 mb-2">Unter der Laterne</h3>
-          <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
-            Eine Begegnung in der regennassen Nacht – über Zufall, Schatten und Erinnerung.
-          </p>
-          <a href="https://gumroad.com" target="_blank" class="btn-green">Weiterlesen</a>
+      <!-- Lantern preview -->
+      <article class="card">
+        <img src="assets/article1.jpg" alt="Unter der Laterne">
+        <div class="body">
+          <h3 class="title">Unter der Laterne</h3>
+          <p class="teaser">Eine Halloweenerzählung: Jack O'Lantern und die Nacht, die Antworten fordert.</p>
+          <div style="display:flex;gap:.5rem">
+            <a class="btn" href="https://gum.co/PUT-GUMROAD-LINK-LANTERN" target="_blank" rel="noopener">Gumroad (0,50 €)</a>
+            <a class="btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_PAYPAL_EMAIL&amount=0.50&currency_code=EUR&return=https://midnight-chronicle.com/article-lantern.html" target="_blank" rel="noopener">PayPal (0,50 €)</a>
+          </div>
         </div>
       </article>
 
-      <!-- Artikel 2 -->
-      <article class="article-card border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
-        <img src="article2.jpg" alt="Artikel 2" class="w-full h-44 object-cover opacity-95">
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-green-400 mb-2">Stille Maschinen</h3>
-          <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
-            Über die verlorene Eleganz der Mechanik und das leise Verschwinden handwerklicher Seele.
-          </p>
-          <a href="https://paypal.me" target="_blank" class="btn-green">Weiterlesen</a>
+      <!-- Machines preview -->
+      <article class="card">
+        <img src="assets/article2.jpg" alt="Stille Maschinen">
+        <div class="body">
+          <h3 class="title">Stille Maschinen</h3>
+          <p class="teaser">Essay/Reportage über verlassene Werkstätten, handwerkliche Erinnerung und mechanische Poesie.</p>
+          <div style="display:flex;gap:.5rem">
+            <a class="btn" href="https://gum.co/PUT-GUMROAD-LINK-MACHINES" target="_blank" rel="noopener">Gumroad (0,50 €)</a>
+            <a class="btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_PAYPAL_EMAIL&amount=0.50&currency_code=EUR&return=https://midnight-chronicle.com/article-machines.html" target="_blank" rel="noopener">PayPal (0,50 €)</a>
+          </div>
         </div>
       </article>
 
-      <!-- Artikel 3 -->
-      <article class="article-card border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
-        <img src="article3.jpg" alt="Artikel 3" class="w-full h-44 object-cover opacity-95">
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-green-400 mb-2">Echo im Glas</h3>
-          <p class="text-neutral-300 mb-3 text-sm leading-relaxed">
-            Die Stimmen der Nacht in einer verlassenen Halle – ein Bericht zwischen Traum und Verfall.
-          </p>
-          <a href="https://gumroad.com" target="_blank" class="btn-green">Weiterlesen</a>
+      <!-- Echo preview -->
+      <article class="card">
+        <img src="assets/article3.jpg" alt="Echo im Glas">
+        <div class="body">
+          <h3 class="title">Echo im Glas</h3>
+          <p class="teaser">Geistergeschichte: Ein Mädchen lockt Passanten — und sie verschwinden.</p>
+          <div style="display:flex;gap:.5rem">
+            <a class="btn" href="https://gum.co/PUT-GUMROAD-LINK-ECHO" target="_blank" rel="noopener">Gumroad (0,50 €)</a>
+            <a class="btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_PAYPAL_EMAIL&amount=0.50&currency_code=EUR&return=https://midnight-chronicle.com/article-echo.html" target="_blank" rel="noopener">PayPal (0,50 €)</a>
+          </div>
         </div>
       </article>
 
-    </section>
-
-    <!-- ABONNENTENBEREICH -->
-    <section class="bg-neutral-900 rounded-2xl shadow-lg p-6 md:p-8 border border-neutral-800 text-center">
-      <h2 class="text-2xl font-bold text-green-400 mb-3">Abonnentenbereich</h2>
-      <p class="text-neutral-300 mb-3">
-        Exklusive Inhalte für Unterstützer. Du kannst über die folgenden Plattformen spenden oder abonnieren:
-      </p>
-      <p>
-        <a href="https://paypal.me" class="text-green-400 hover:text-green-200">PayPal</a> |
-        <a href="https://gumroad.com" class="text-green-400 hover:text-green-200">Gumroad</a>
-      </p>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="text-center text-sm text-neutral-500 py-6 border-t border-neutral-800">
-    © 2025 <span class="text-green-400">Midnight Chronicle</span> — Crafted with passion and a touch of rust.
+  <footer>
+    © 2025 Midnight Chronicle — Exklusive Vollversionen für Unterstützer.
   </footer>
 
 </body>
